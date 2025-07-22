@@ -10,6 +10,24 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// CORS
+const allowedOrigins = [
+  "http://localhost:3000",                
+  "https://.vercel.app"     
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); 
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true); // 
+    } else {
+      callback(new Error("Not allowed by CORS")); 
+    }
+  },
+  credentials: true,
+};
+
 //Port No.
 const port = process.env.PORT || 5000;
 
