@@ -13,7 +13,7 @@ app.use(express.json());
 // CORS
 const allowedOrigins = [
   "http://localhost:3000",                
-  "https://.vercel.app"     
+  "https://quizera-kk3p.vercel.app/"     
 ];
 
 const corsOptions = {
